@@ -1,5 +1,5 @@
 import { InferSelectModel, relations } from 'drizzle-orm'
-import { pgTable, serial, text, timestamp, pgEnum } from 'drizzle-orm/pg-core'
+import { pgTable, serial, text, timestamp, pgEnum, boolean } from 'drizzle-orm/pg-core'
 
 // Enums for issue status and priority
 export const statusEnum = pgEnum('status', [
@@ -59,3 +59,19 @@ export const TASK_PRIORITY = {
   medium: { label: 'Medium', value: 'medium' },
   high: { label: 'High', value: 'high' },
 }
+
+export const sessions = pgTable('sessions', {
+  id: text('id').primaryKey(),                          // nanoid()
+  userId: text('user_id').notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  tokenHash: text('token_hash').notNull().unique(),
+  userAgent: text('user_agent'),
+  ip: text('ip'),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
+  expiresAt: timestamp('expires_at', { withTimezone: true }).notNull(),
+  revoked: boolean('revoked').notNull().default(false),
+})
+
+export const sessionsRelations = relations(sessions, ({ one }) => ({
+  user: one(users, { fields: [sessions.userId], references: [users.id] }),
+}))
