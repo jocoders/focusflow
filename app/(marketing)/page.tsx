@@ -10,7 +10,7 @@ export default async function LandingPage() {
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight">
               Focus made <br className="hidden sm:block" />
-              <span className="text-purple-600 dark:text-purple-400">
+              <span className="text-primary-solid">
                 simple
               </span>
             </h1>

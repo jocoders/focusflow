@@ -1,17 +1,237 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* CANVAS */
+  --canvas-base: #fbfdfc;
+  --canvas-bg-subtle: #f8faf9;
+  --canvas-bg: #f1f4f3;
+  --canvas-bg-hover: #ecefed;
+  --canvas-bg-active: #e6e9e8;
+  --canvas-line: #dfe4e2;
+  --canvas-border: #d7dcda;
+  --canvas-border-hover: #c2c9c6;
+  --canvas-solid: #8a918e;
+  --canvas-solid-hover: #808784;
+  --canvas-text: #6a716e;
+  --canvas-text-contrast: #111c18;
+  --canvas-on-canvas: #fff;
+
+  /* PRIMARY */
+  --primary-base: #fdfdfe;
+  --primary-bg-subtle: #f8faff;
+  --primary-bg: #f0f4ff;
+  --primary-bg-hover: #e6edfe;
+  --primary-bg-active: #d9e2fc;
+  --primary-line: #c6d4f9;
+  --primary-border: #aec0f5;
+  --primary-border-hover: #8da4ef;
+  --primary-solid: #3e63dd;
+  --primary-solid-hover: #3a5ccc;
+  --primary-text: #3451b2;
+  --primary-text-contrast: #101d46;
+  --primary-on-primary: #ffffff;
+
+  /* SUCCESS */
+  --success-base: #fbfefc;
+  --success-bg-subtle: #f2fcf5;
+  --success-bg: #e9f9ee;
+  --success-bg-hover: #ddf3e4;
+  --success-bg-active: #ccebd7;
+  --success-line: #b4dfc4;
+  --success-border: #92ceac;
+  --success-border-hover: #5bb98c;
+  --success-solid: #30a46c;
+  --success-solid-hover: #299764;
+  --success-text: #18794e;
+  --success-text-contrast: #153226;
+  --success-on-success: #ffffff;
+
+  /* WARNING */
+  --warning-base: #fdfdf9;
+  --warning-bg-subtle: #fffce8;
+  --warning-bg: #fffbd1;
+  --warning-bg-hover: #fff8bb;
+  --warning-bg-active: #fef2a4;
+  --warning-line: #f9e68c;
+  --warning-border: #efd36c;
+  --warning-border-hover: #ebbc00;
+  --warning-solid: #f5d90a;
+  --warning-solid-hover: #f7ce00;
+  --warning-text: #946800;
+  --warning-text-contrast: #35290f;
+  --warning-on-warning: #000000;
+
+  /* ALERT */
+  --alert-base: #fffcfc;
+  --alert-bg-subtle: #fff8f8;
+  --alert-bg: #ffefef;
+  --alert-bg-hover: #ffe5e5;
+  --alert-bg-active: #fdd8d8;
+  --alert-line: #f9c6c6;
+  --alert-border: #f3aeaf;
+  --alert-border-hover: #eb9091;
+  --alert-solid: #e5484d;
+  --alert-solid-hover: #dc3d43;
+  --alert-text: #cd2b31;
+  --alert-text-contrast: #381316;
+  --alert-on-alert: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #121212;
     --foreground: #ededed;
+
+    /* CANVAS */
+    --canvas-base: #141716;
+    --canvas-bg-subtle: #191d1b;
+    --canvas-bg: #1f2421;
+    --canvas-bg-hover: #252a27;
+    --canvas-bg-active: #2a2f2c;
+    --canvas-line: #303633;
+    --canvas-border: #393f3c;
+    --canvas-border-hover: #4a524e;
+    --canvas-solid: #66736d;
+    --canvas-solid-hover: #75817b;
+    --canvas-text: #99a29e;
+    --canvas-text-contrast: #eceeed;
+    --canvas-on-canvas: #000;
+
+    /* PRIMARY */
+    --primary-base: #131620;
+    --primary-bg-subtle: #15192d;
+    --primary-bg: #192140;
+    --primary-bg-hover: #1c274f;
+    --primary-bg-active: #1f2c5c;
+    --primary-line: #22346e;
+    --primary-border: #273e89;
+    --primary-border-hover: #2f4eb2;
+    --primary-solid: #3e63dd;
+    --primary-solid-hover: #5373e7;
+    --primary-text: #849dff;
+    --primary-text-contrast: #eef1fd;
+    --primary-on-primary: #ffffff;
+
+    /* SUCCESS */
+    --success-base: #0d1912;
+    --success-bg-subtle: #0c1f17;
+    --success-bg: #0f291e;
+    --success-bg-hover: #113123;
+    --success-bg-active: #133929;
+    --success-line: #164430;
+    --success-border: #1b543a;
+    --success-border-hover: #236e4a;
+    --success-solid: #30a46c;
+    --success-solid-hover: #3cb179;
+    --success-text: #4cc38a;
+    --success-text-contrast: #e5fbeb;
+    --success-on-success: #ffffff;
+
+    /* WARNING */
+    --warning-base: #1c1500;
+    --warning-bg-subtle: #221a00;
+    --warning-bg: #2c2100;
+    --warning-bg-hover: #352800;
+    --warning-bg-active: #3e3000;
+    --warning-line: #493c00;
+    --warning-border: #594a05;
+    --warning-border-hover: #705e00;
+    --warning-solid: #f5d90a;
+    --warning-solid-hover: #ffef5c;
+    --warning-text: #f0c000;
+    --warning-text-contrast: #fffad1;
+    --warning-on-warning: #000000;
+
+    /* ALERT */
+    --alert-base: #1f1315;
+    --alert-bg-subtle: #291415;
+    --alert-bg: #3c181a;
+    --alert-bg-hover: #481a1d;
+    --alert-bg-active: #541b1f;
+    --alert-line: #671e22;
+    --alert-border: #822025;
+    --alert-border-hover: #aa2429;
+    --alert-solid: #e5484d;
+    --alert-solid-hover: #f2555a;
+    --alert-text: #ff6369;
+    --alert-text-contrast: #feecee;
+    --alert-on-alert: #ffffff;
   }
+}
+
+@theme inline {
+  --color-canvas-base: var(--canvas-base);
+  --color-canvas-bg-subtle: var(--canvas-bg-subtle);
+  --color-canvas-bg: var(--canvas-bg);
+  --color-canvas-bg-hover: var(--canvas-bg-hover);
+  --color-canvas-bg-active: var(--canvas-bg-active);
+  --color-canvas-line: var(--canvas-line);
+  --color-canvas-border: var(--canvas-border);
+  --color-canvas-border-hover: var(--canvas-border-hover);
+  --color-canvas-solid: var(--canvas-solid);
+  --color-canvas-solid-hover: var(--canvas-solid-hover);
+  --color-canvas-text: var(--canvas-text);
+  --color-canvas-text-contrast: var(--canvas-text-contrast);
+  --color-canvas-on-canvas: var(--canvas-on-canvas);
+
+  --color-primary-base: var(--primary-base);
+  --color-primary-bg-subtle: var(--primary-bg-subtle);
+  --color-primary-bg: var(--primary-bg);
+  --color-primary-bg-hover: var(--primary-bg-hover);
+  --color-primary-bg-active: var(--primary-bg-active);
+  --color-primary-line: var(--primary-line);
+  --color-primary-border: var(--primary-border);
+  --color-primary-border-hover: var(--primary-border-hover);
+  --color-primary-solid: var(--primary-solid);
+  --color-primary-solid-hover: var(--primary-solid-hover);
+  --color-primary-text: var(--primary-text);
+  --color-primary-text-contrast: var(--primary-text-contrast);
+  --color-primary-on-primary: var(--primary-on-primary);
+
+  --color-success-base: var(--success-base);
+  --color-success-bg-subtle: var(--success-bg-subtle);
+  --color-success-bg: var(--success-bg);
+  --color-success-bg-hover: var(--success-bg-hover);
+  --color-success-bg-active: var(--success-bg-active);
+  --color-success-line: var(--success-line);
+  --color-success-border: var(--success-border);
+  --color-success-border-hover: var(--success-border-hover);
+  --color-success-solid: var(--success-solid);
+  --color-success-solid-hover: var(--success-solid-hover);
+  --color-success-text: var(--success-text);
+  --color-success-text-contrast: var(--success-text-contrast);
+  --color-success-on-success: var(--success-on-success);
+
+  --color-warning-base: var(--warning-base);
+  --color-warning-bg-subtle: var(--warning-bg-subtle);
+  --color-warning-bg: var(--warning-bg);
+  --color-warning-bg-hover: var(--warning-bg-hover);
+  --color-warning-bg-active: var(--warning-bg-active);
+  --color-warning-line: var(--warning-line);
+  --color-warning-border: var(--warning-border);
+  --color-warning-border-hover: var(--warning-border-hover);
+  --color-warning-solid: var(--warning-solid);
+  --color-warning-solid-hover: var(--warning-solid-hover);
+  --color-warning-text: var(--warning-text);
+  --color-warning-text-contrast: var(--warning-text-contrast);
+  --color-warning-on-warning: var(--warning-on-warning);
+
+  --color-alert-base: var(--alert-base);
+  --color-alert-bg-subtle: var(--alert-bg-subtle);
+  --color-alert-bg: var(--alert-bg);
+  --color-alert-bg-hover: var(--alert-bg-hover);
+  --color-alert-bg-active: var(--alert-bg-active);
+  --color-alert-line: var(--alert-line);
+  --color-alert-border: var(--alert-border);
+  --color-alert-border-hover: var(--alert-border-hover);
+  --color-alert-solid: var(--alert-solid);
+  --color-alert-solid-hover: var(--alert-solid-hover);
+  --color-alert-text: var(--alert-text);
+  --color-alert-text-contrast: var(--alert-text-contrast);
+  --color-alert-on-alert: var(--alert-on-alert);
 }
 
 body {
