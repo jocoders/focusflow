@@ -6,11 +6,11 @@ import NavLink from './NavLink'
 
 export default function Navigation() {
   return (
-    <aside className="fixed inset-y-0 left-0 w-16 md:w-64 bg-gray-50 dark:bg-[#1A1A1A] border-r border-gray-200 dark:border-dark-border-subtle flex flex-col py-4 px-2 md:px-4">
+    <aside className="fixed inset-y-0 left-0 w-16 md:w-64 bg-canvas-bg-subtle border-r border-canvas-border flex flex-col py-4 px-2 md:px-4">
       <div className="flex items-center justify-center md:justify-start mb-8 px-2">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+          className="text-xl font-bold tracking-tight text-canvas-text-contrast"
         >
           <span className="hidden md:inline">FocusFlow</span>
           <span className="md:hidden">F</span>
@@ -30,7 +30,7 @@ export default function Navigation() {
         />
       </nav>
 
-      <div className="pt-4 border-t border-gray-200 dark:border-dark-border-subtle">
+      <div className="pt-4 border-t border-canvas-border">
         <Suspense
           fallback={
             <NavLink

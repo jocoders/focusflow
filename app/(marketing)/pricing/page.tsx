@@ -4,12 +4,12 @@ import { CheckCircle2, XCircle } from 'lucide-react'
 
 export default function PricingPage() {
   return (
-    <div className="container mx-auto px-4 py-12 text-white">
+    <div className="container mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto text-center mb-16">
-        <h1 className="text-4xl font-bold mb-4 text-canvas-border">
+        <h1 className="text-4xl font-bold mb-4 text-canvas-text-contrast">
           Simple, Transparent Pricing
         </h1>
-        <p className="text-xl text-gray-400 dark:text-gray-300">
+        <p className="text-xl text-canvas-text">
           Choose the plan that&apos;s right for you and your team
         </p>
       </div>
@@ -73,16 +73,16 @@ export default function PricingPage() {
         />
       </div>
 
-      <div className="max-w-3xl mx-auto mt-16 text-center bg-gray-800 rounded-lg p-8">
-        <h2 className="text-2xl font-bold mb-4 text-white">
+      <div className="max-w-3xl mx-auto mt-16 text-center bg-canvas-bg rounded-lg p-8 border border-canvas-border">
+        <h2 className="text-2xl font-bold mb-4 text-canvas-text-contrast">
           Need a custom solution?
         </h2>
-        <p className="text-lg text-gray-400 dark:text-gray-300 mb-8">
+        <p className="text-lg text-canvas-text mb-8">
           Contact our sales team to discuss your specific requirements.
         </p>
         <a
           href="mailto:sales@focusflow.com"
-          className="inline-flex h-10 items-center justify-center rounded-md bg-purple-600 px-8 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-purple-700"
+          className="inline-flex h-10 items-center justify-center rounded-md bg-primary-solid px-8 py-2 text-sm font-medium text-primary-on-primary shadow transition-colors hover:bg-primary-solid-hover focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-border"
         >
           Contact Sales
         </a>
@@ -123,36 +123,36 @@ function PricingCard({
     <div
       className={`rounded-lg p-6 ${
         highlighted
-          ? 'bg-blue-900 border-2 border-blue-700 shadow-md relative'
-          : 'bg-gray-800 border border-gray-700 shadow-sm'
+          ? 'bg-primary-bg border-2 border-primary-border shadow-md relative'
+          : 'bg-canvas-bg border border-canvas-border shadow-sm'
       }`}
     >
       {badge && (
-        <div className="absolute -top-3 -right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+        <div className="absolute -top-3 -right-3 bg-primary-solid text-primary-on-primary text-xs font-bold px-3 py-1 rounded-full">
           {badge}
         </div>
       )}
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+      <h3 className="text-xl font-bold mb-2 text-canvas-text-contrast">{title}</h3>
       <div className="mb-4">
-        <span className="text-3xl font-bold text-white">{price}</span>
+        <span className="text-3xl font-bold text-canvas-text-contrast">{price}</span>
         {price !== 'Custom' && (
-          <span className="text-gray-400 dark:text-gray-300"> {period}</span>
+          <span className="text-canvas-text"> {period}</span>
         )}
       </div>
-      <p className="text-gray-400 dark:text-gray-300 mb-6">{description}</p>
+      <p className="text-canvas-text mb-6">{description}</p>
       <ul className="space-y-3 mb-6">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start">
             {feature.included ? (
-              <CheckCircle2 className="h-5 w-5 text-green-300 mr-2 flex-shrink-0" />
+              <CheckCircle2 className="h-5 w-5 text-success-text mr-2 flex-shrink-0" />
             ) : (
-              <XCircle className="h-5 w-5 text-gray-500 mr-2 flex-shrink-0" />
+              <XCircle className="h-5 w-5 text-canvas-text mr-2 flex-shrink-0" />
             )}
             <span
               className={
                 feature.included
-                  ? 'text-white'
-                  : 'text-gray-500 dark:text-gray-600'
+                  ? 'text-canvas-text-contrast'
+                  : 'text-canvas-text'
               }
             >
               {feature.name}
@@ -164,8 +164,8 @@ function PricingCard({
         href={buttonLink}
         className={`w-full inline-flex h-10 items-center justify-center rounded-md px-8 py-2 text-sm font-medium shadow transition-colors ${
           highlighted
-            ? 'bg-blue-600 text-white hover:bg-blue-700'
-            : 'bg-gray-800 border border-gray-700 hover:bg-gray-700 text-white'
+            ? 'bg-primary-solid text-primary-on-primary hover:bg-primary-solid-hover'
+            : 'bg-canvas-bg-subtle border border-canvas-border hover:bg-canvas-bg-hover text-canvas-text-contrast'
         }`}
       >
         {buttonText}

@@ -85,7 +85,7 @@ export default function TaskForm({
       {state?.message && (
         <FormError
           className={`mb-4 ${
-            state.success ? 'bg-green-100 text-green-800 border-green-300' : ''
+            state.success ? 'bg-success-bg text-success-text border border-success-border' : ''
           }`}
         >
           {state.message}
@@ -104,10 +104,10 @@ export default function TaskForm({
           maxLength={100}
           disabled={isPending}
           aria-describedby="title-error"
-          className={state?.errors?.title ? 'border-red-500' : ''}
+          className={state?.errors?.title ? 'border-alert-border' : ''}
         />
         {state?.errors?.title && (
-          <p id="title-error" className="text-sm text-red-500">
+          <p id="title-error" className="text-sm text-alert-text">
             {state.errors.title[0]}
           </p>
         )}
@@ -123,10 +123,10 @@ export default function TaskForm({
           defaultValue={task?.description || ''}
           disabled={isPending}
           aria-describedby="description-error"
-          className={state?.errors?.description ? 'border-red-500' : ''}
+          className={state?.errors?.description ? 'border-alert-border' : ''}
         />
         {state?.errors?.description && (
-          <p id="description-error" className="text-sm text-red-500">
+          <p id="description-error" className="text-sm text-alert-text">
             {state.errors.description[0]}
           </p>
         )}
@@ -143,10 +143,10 @@ export default function TaskForm({
             disabled={isPending}
             required
             aria-describedby="status-error"
-            className={state?.errors?.status ? 'border-red-500' : ''}
+            className={state?.errors?.status ? 'border-alert-border' : ''}
           />
           {state?.errors?.status && (
-            <p id="status-error" className="text-sm text-red-500">
+            <p id="status-error" className="text-sm text-alert-text">
               {state.errors.status[0]}
             </p>
           )}
@@ -162,10 +162,10 @@ export default function TaskForm({
             disabled={isPending}
             required
             aria-describedby="priority-error"
-            className={state?.errors?.priority ? 'border-red-500' : ''}
+            className={state?.errors?.priority ? 'border-alert-border' : ''}
           />
           {state?.errors?.priority && (
-            <p id="priority-error" className="text-sm text-red-500">
+            <p id="priority-error" className="text-sm text-alert-text">
               {state.errors.priority[0]}
             </p>
           )}

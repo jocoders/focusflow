@@ -36,7 +36,7 @@ export function FormLabel({ className, children, ...props }: FormLabelProps) {
   return (
     <label
       className={cn(
-        'text-sm font-medium text-gray-700 dark:text-gray-300',
+        'text-sm font-medium text-canvas-text-contrast',
         className
       )}
       {...props}
@@ -55,7 +55,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
       <input
         ref={ref}
         className={cn(
-          'flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-dark-border-medium dark:bg-[#222222] dark:text-gray-100 dark:placeholder:text-gray-500',
+          'flex h-10 w-full rounded-md border border-canvas-border bg-canvas-bg px-3 py-2 text-sm text-canvas-text-contrast placeholder:text-canvas-text focus:outline-none focus:ring-2 focus:ring-primary-solid focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50',
           className
         )}
         {...props}
@@ -74,7 +74,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
       <textarea
         ref={ref}
         className={cn(
-          'flex min-h-[80px] w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-dark-border-medium dark:bg-[#222222] dark:text-gray-100 dark:placeholder:text-gray-500',
+          'flex min-h-[80px] w-full rounded-md border border-canvas-border bg-canvas-bg px-3 py-2 text-sm text-canvas-text-contrast placeholder:text-canvas-text focus:outline-none focus:ring-2 focus:ring-primary-solid focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50',
           className
         )}
         {...props}
@@ -96,7 +96,7 @@ export const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
       <select
         ref={ref}
         className={cn(
-          'flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50 dark:border-dark-border-medium dark:bg-[#222222] dark:text-gray-100',
+          'flex h-10 w-full rounded-md border border-canvas-border bg-canvas-bg px-3 py-2 text-sm text-canvas-text-contrast focus:outline-none focus:ring-2 focus:ring-primary-solid focus:border-transparent disabled:cursor-not-allowed disabled:opacity-50',
           className
         )}
         {...props}
@@ -121,7 +121,7 @@ interface FormErrorProps extends React.HTMLAttributes<HTMLParagraphElement> {
 
 export function FormError({ className, children, ...props }: FormErrorProps) {
   return (
-    <p className={cn('text-xs font-medium text-red-500', className)} {...props}>
+    <p className={cn('text-xs font-medium text-alert-text', className)} {...props}>
       {children}
     </p>
   )
@@ -140,7 +140,7 @@ export function FormDescription({
 }: FormDescriptionProps) {
   return (
     <p
-      className={cn('text-xs text-gray-500 dark:text-gray-400', className)}
+      className={cn('text-xs text-canvas-text', className)}
       {...props}
     >
       {children}

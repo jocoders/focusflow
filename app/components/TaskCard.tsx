@@ -48,7 +48,7 @@ export default function TaskCard({ issue }: TaskCardProps) {
         </CardHeader>
         <CardContent className="pb-2">
           {description && (
-            <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-3">
+            <p className="text-canvas-text text-sm line-clamp-2 mb-3">
               {description}
             </p>
           )}
@@ -59,7 +59,7 @@ export default function TaskCard({ issue }: TaskCardProps) {
             </Badge>
           </div>
         </CardContent>
-        <CardFooter className="text-xs text-gray-500">
+        <CardFooter className="text-xs text-canvas-text">
           {formatRelativeTime(new Date(createdAt))}
         </CardFooter>
       </Card>

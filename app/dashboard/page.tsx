@@ -25,9 +25,9 @@ export default async function DashboardPage() {
       </div>
 
       {tasks?.length > 0 ? (
-        <div className="overflow-hidden rounded-lg border border-gray-200 dark:border-dark-border-default bg-white dark:bg-dark-high shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-canvas-border bg-canvas-bg shadow-sm">
           {/* Header row */}
-          <div className="grid grid-cols-12 gap-4 px-6 py-3 text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-dark-elevated border-b border-gray-200 dark:border-dark-border-default">
+          <div className="grid grid-cols-12 gap-4 px-6 py-3 text-sm font-medium text-canvas-text bg-canvas-bg-subtle border-b border-canvas-border">
             <div className="col-span-5">Title</div>
             <div className="col-span-2">Status</div>
             <div className="col-span-2">Priority</div>
@@ -35,12 +35,12 @@ export default async function DashboardPage() {
           </div>
 
           {/* Task rows */}
-          <div className="divide-y divide-gray-200 dark:divide-dark-border-default">
+          <div className="divide-y divide-canvas-border">
             {tasks.map((issue) => (
               <Link
                 key={issue.id}
                 href={`/tasks/${issue.id}`}
-                className="block hover:bg-gray-50 dark:hover:bg-dark-elevated transition-colors"
+                className="block hover:bg-canvas-bg-hover transition-colors"
               >
                 <div className="grid grid-cols-12 gap-4 px-6 py-4 items-center">
                   <div className="col-span-5 font-medium truncate">
@@ -56,7 +56,7 @@ export default async function DashboardPage() {
                       {TASK_PRIORITY[issue.priority as Priority].label}
                     </Badge>
                   </div>
-                  <div className="col-span-3 text-sm text-gray-500 dark:text-gray-400">
+                  <div className="col-span-3 text-sm text-canvas-text">
                     {formatRelativeTime(new Date(issue.createdAt))}
                   </div>
                 </div>
@@ -65,9 +65,9 @@ export default async function DashboardPage() {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-12 text-center border border-gray-200 dark:border-dark-border-default rounded-lg bg-white dark:bg-dark-high p-8">
+        <div className="flex flex-col items-center justify-center py-12 text-center border border-canvas-border rounded-lg bg-canvas-bg p-8">
           <h3 className="text-lg font-medium mb-2">No tasks found</h3>
-          <p className="text-gray-500 dark:text-gray-400 mb-6">
+          <p className="text-canvas-text mb-6">
             Get started by creating your first task.
           </p>
           <Link href="/app/tasks/new">

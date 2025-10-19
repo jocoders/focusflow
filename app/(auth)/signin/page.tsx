@@ -49,12 +49,12 @@ export default function SignInPage() {
   }, initialState)
 
   return (
-    <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gray-50 dark:bg-[#121212]">
+    <div className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8 bg-background">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h1 className="text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+        <h1 className="text-center text-3xl font-extrabold text-canvas-text-contrast">
           FocusFlow
         </h1>
-        <h2 className="mt-2 text-center text-2xl font-bold text-gray-900 dark:text-white">
+        <h2 className="mt-2 text-center text-2xl font-bold text-canvas-text-contrast">
           Sign in to your account
         </h2>
       </div>
@@ -75,10 +75,10 @@ export default function SignInPage() {
               required
               disabled={isPending}
               aria-describedby="email-error"
-              className={state?.errors?.email ? 'border-red-500' : ''}
+              className={state?.errors?.email ? 'border-alert-border' : ''}
             />
             {state?.errors?.email && (
-              <p id="email-error" className="text-sm text-red-500">
+              <p id="email-error" className="text-sm text-alert-text">
                 {state.errors.email[0]}
               </p>
             )}
@@ -94,10 +94,10 @@ export default function SignInPage() {
               required
               disabled={isPending}
               aria-describedby="password-error"
-              className={state?.errors?.password ? 'border-red-500' : ''}
+              className={state?.errors?.password ? 'border-alert-border' : ''}
             />
             {state?.errors?.password && (
-              <p id="password-error" className="text-sm text-red-500">
+              <p id="password-error" className="text-sm text-alert-text">
                 {state.errors.password[0]}
               </p>
             )}
@@ -109,13 +109,13 @@ export default function SignInPage() {
             </Button>
           </div>
         </Form>
-        <div className="bg-white dark:bg-[#1A1A1A] py-8 px-4 shadow sm:rounded-lg sm:px-10 border border-gray-100 dark:border-dark-border-subtle">
+        <div className="bg-canvas-bg py-8 px-4 shadow sm:rounded-lg sm:px-10 border border-canvas-border">
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-sm text-canvas-text">
               Don&apos;t have an account?{' '}
               <Link
                 href="/signup"
-                className="font-medium text-gray-900 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
+                className="font-medium text-canvas-text-contrast hover:text-primary-text"
               >
                 Sign up
               </Link>

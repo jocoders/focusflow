@@ -21,14 +21,14 @@ export default function Button({
 
   const variants = {
     primary:
-      'bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800',
+      'bg-primary-solid text-primary-on-primary hover:bg-primary-solid-hover active:bg-primary-solid-hover',
     secondary:
-      'bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600',
+      'bg-canvas-bg-subtle text-canvas-text-contrast hover:bg-canvas-bg-hover',
     outline:
-      'border border-gray-300 bg-transparent hover:bg-gray-100 dark:border-dark-border-medium dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:text-gray-100',
+      'border border-canvas-border bg-transparent hover:bg-canvas-bg-hover text-canvas-text-contrast',
     ghost:
-      'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-100 dark:text-gray-100',
-    danger: 'bg-red-600 text-white hover:bg-red-700',
+      'bg-transparent hover:bg-canvas-bg-hover text-canvas-text-contrast',
+    danger: 'bg-alert-solid text-alert-on-alert hover:bg-alert-solid-hover',
   }
 
   const sizes = {

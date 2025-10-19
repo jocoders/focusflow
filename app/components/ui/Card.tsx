@@ -15,7 +15,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'rounded-lg border border-gray-200 bg-white shadow-sm dark:border-dark-border-default dark:bg-dark-high',
+        'rounded-lg border border-canvas-border bg-canvas-bg shadow-sm',
         hoverable && 'transition-shadow hover:shadow-md',
         className
       )}
@@ -62,7 +62,7 @@ export function CardDescription({
 }: CardDescriptionProps) {
   return (
     <p
-      className={cn('text-sm text-gray-500 dark:text-gray-400', className)}
+      className={cn('text-sm text-canvas-text', className)}
       {...props}
     >
       {children}

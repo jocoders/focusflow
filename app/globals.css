@@ -163,6 +163,9 @@
 }
 
 @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
   --color-canvas-base: var(--canvas-base);
   --color-canvas-bg-subtle: var(--canvas-bg-subtle);
   --color-canvas-bg: var(--canvas-bg);
